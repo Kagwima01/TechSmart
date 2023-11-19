@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node server/index",
+    "server": "node server/index.js",
     "client": "npm run start --prefix client",
-    "start": "node server/index.js",
-    "app": "concurrently \"npm run start\" \"npm run client\"",
-    "build": "cd client && npm install && npm run build"
+    "build": "cd client && npm install && npm run build",
+    "app": "concurrently npm \"npm run server\" \"npm run client\""
   },
   "engines": {
     "node": ">=18.15.0 <19.0.0"
